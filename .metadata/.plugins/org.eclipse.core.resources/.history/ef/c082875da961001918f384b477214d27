@@ -1,0 +1,22 @@
+package idu.cs.controller;
+
+@Controlller
+public class HomeController {
+	@Autowired UserRepository userRepo; // Dependency Injection
+	
+	@RequestMapping("/")
+	public String home(Model model) {
+		model.addAttribute("test", "인덕컴소");
+		model.addAttribute("egy", "유응구");
+		return "index";
+	}
+	@GetMapping("/users")
+	public String getAllUser(Model model) {
+		model.addAttribute("users", userRepo.findAll());
+		return "userlist";
+	}
+	@PostMapping("/users")
+	public User createUser(@Valid @RequestBody User user) {
+		return userRepo.save(user);
+	}
+}

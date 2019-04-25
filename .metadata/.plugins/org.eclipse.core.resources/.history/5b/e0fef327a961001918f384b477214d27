@@ -1,0 +1,5 @@
+package idu.cs.controller;
+
+public class HomeController {
+
+}

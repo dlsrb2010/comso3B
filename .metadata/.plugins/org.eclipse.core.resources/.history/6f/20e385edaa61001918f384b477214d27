@@ -1,0 +1,5 @@
+package idu.cs.domain;
+
+public class User {
+
+}
